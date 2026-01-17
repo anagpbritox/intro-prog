@@ -1,0 +1,32 @@
+# @cikey b8c2f0e997296c4047aa90efbb14a388
+# @sid 20251174010038
+# @aid V8.5
+
+contatos = "Bloco 85.txt"
+
+def add(user,num):
+    with open(contatos,"a",encoding="utf-8") as escreva:
+        escreva.write(f"{user} {num}\n")
+        
+def check(contatos):
+    with open(contatos,"r",encoding="utf-8") as leia:
+       telefones = leia.readlines()
+       for contato in telefones:
+            print(contato.strip())
+            
+print("_______________________")
+print("1 - Adicionar Contato")
+print("2 - Ver Contatos")
+print("3 - Sair")
+pergunta = input("O que voce deseja fazer? ")
+
+while pergunta != "3":
+    if pergunta == "1":
+        user = input("Nome:")
+        num = input("numero:")
+        add(user,num)
+    elif pergunta == "2":
+        check(contatos)
+    else:
+        print("Escolha invalida")
+    pergunta = input("O que voce deseja fazer? ")

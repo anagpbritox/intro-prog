@@ -1,0 +1,10 @@
+# @cikey b8c2f0e997296c4047aa90efbb14a388
+# @sid 20251174010038
+# @aid V8.3
+
+
+with open( "text82.txt","r") as arq1:
+    conteudo = arq1.read()
+with open("text83.txt","w") as arq2:
+    arq2.write(conteudo)
+print("Arquivo copiado")

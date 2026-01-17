@@ -5,26 +5,26 @@
 
 #begin_inputs
 
+crescimento_ceara_mirim = 1.03
+ceara_mirim = 73000
+
+crescimento_taipu = 1.10
 taipu = 12000
-tx_taipu = 0.1 * taipu
+
+crescimento_parnamirim = 1.01
 parnamirim = 250000
-tx_parnamirim = 0.01 * parnamirim
-cearamirim = 73000
-tx_cm = 0.03 * cearamirim
 
 #end_inputs
 
 ano = 0
 
-while parnamirim > cearamirim and parnamirim > taipu:
-
-    taipu = taipu + tx_taipu
-    tx_taipu = 0.1 * taipu
-    parnamirim = parnamirim + tx_parnamirim
-    tx_parnamirim = 0.01 * tx_parnamirim
-    cearamirim = cearamirim + tx_cm
-    tx_cm = 0.03 * cearamirim
-
+while parnamirim > ceara_mirim and parnamirim > taipu:
+    parnamirim = round(parnamirim * crescimento_parnamirim)
+    ceara_mirim = round(ceara_mirim * crescimento_ceara_mirim)
+    taipu = round(taipu * crescimento_taipu)
     ano += 1
 
-print(ano)
+print(f"Parnamirim sera a terceira cidade em: {ano}")
+print(f"Populacao Parnamirim: {parnamirim}")
+print(f"Populacao Ceara mirim: {ceara_mirim}")
+print(f"Populacao Taipu: {taipu}")
